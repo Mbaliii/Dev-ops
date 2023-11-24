@@ -9,6 +9,7 @@ const TextInput = () => {
 
   return (
     <div>
+      <div>learn react</div>
       <label htmlFor="textInput">Enter Text: </label>
       <input
         type="text"
