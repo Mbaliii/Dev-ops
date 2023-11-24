@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+const TextInput = () => {
+  const [text, setText] = useState('');
+
+  const handleInputChange = (event) => {
+    setText(event.target.value);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <label htmlFor="textInput">Enter Text: </label>
+      <input
+        type="text"
+        id="textInput"
+        value={text}
+        onChange={handleInputChange}
+        placeholder="Type here..."
+      />
+      <p>Entered Text: {text}</p>
     </div>
   );
-}
+};
 
-export default App;
+export default TextInput;
